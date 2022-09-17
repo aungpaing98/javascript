@@ -82,13 +82,18 @@
 // console.log(Number.MAX_SAFE_INTEGER);
 
 // let a = 1.7976931348623157e+308
-// let somethingOutOfRange = 90071992547409920;
-// console.log(typeof somethingOutOfRange);
+let somethingOutOfRange = 9007199254740991;
+console.log(typeof somethingOutOfRange);
 // console.log(somethingOutOfRange + 1);
+// console.log(somethingOutOfRange + 2);
+// console.log(somethingOutOfRange + 4);
+// console.log(somethingOutOfRange + 10);
 
 // const x = BigInt(Number.MAX_SAFE_INTEGER)
 // console.log(x)
+// console.log(x + 1n)
 // console.log(x + 2n)
+// console.log(x + 3n)
 
 
 // Exercise

@@ -8,7 +8,7 @@
 // console.log(arr)
 // console.log(anotherArr)
 
-// // Define a function
+// // Define a function ( declarative )
 // function sums(a, b){
 //     return a + b
 // }
@@ -16,13 +16,28 @@
 // // Call a function
 // console.log(sums(10, 20))
 
+// // Define a function (expressive)
+// const diff = function (a, b) {
+//   return a - b;
+// };
+
+// console.log(diff(10, 2));
+
+// // Exercise
+// // Write both  declarative and expressive function for finding the absolute differnet between two input values
+// function diff(a, b){
+//     return Math.abs(a-b)
+// }
+// console.log(diff(10, 20))
+// console.log(diff(20, 2))
+
 // // pass by references && pass by values
-// function changeValue(a){
-//     a = 20
+// function changeValue(a) {
+//   a = 20;
 // }
 
-// function changeArray(arrayObj){
-//     arrayObj[0] = 10
+// function changeArray(arrayObj) {
+//   arrayObj[0] = 10;
 // }
 
 // let a = 10;
@@ -30,10 +45,31 @@
 // changeValue(a)
 // console.log(a)
 
+// let initialValue = 10;
+// let anotherValue = initialValue;
+
+// console.log(initialValue);
+// console.log(anotherValue);
+// initialValue = 100;
+// console.log(initialValue);
+// console.log(anotherValue);
+
+// let initialArr = [1, 2, 3];
+// let anotherArr = initialArr;
+
+// console.log(initialArr);
+// console.log(anotherArr);
+// initialArr[0] = 100;
+// console.log(initialArr);
+// console.log(anotherArr);
+
 // let newArray = [1, 2, 3];
 // console.log(newArray)
 // changeArray(newArray)
 // console.log(newArray)
+
+// Exercise
+// Follow the above steps.
 
 // // Pass function as arguments
 // const timeTaken = function (func) {
@@ -47,7 +83,7 @@
 //   return a + b;
 // };
 
-// const addNumbers = function (limit = 10000000000) {
+// const addNumbers = function (limit = 1000000000) {
 //   let ret = 0;
 //   for (let i = 0; i < limit; i++) {
 //     ret += i;
@@ -55,11 +91,39 @@
 //   return ret;
 // };
 
-// timeTaken(sums);
+// timeTaken(addNumbers);
+
+// // Exercise
+// // Write a way to log function name before executing that function
+// const logFuncName = function (func) {
+//   console.log(`Function Name  : ${func.name}`);
+//   func();
+// };
+
+// const greeting = function () {
+//   console.log("Hello World");
+// };
+
+// const sum = function (a = 10, b = 20) {
+//   console.log(a + b);
+// };
+
+// logFuncName(greeting);
+// logFuncName(sum, 10, 20);
 
 // // Recursive function
 // const factorial = function (n) {
 //   return n < 2 ? 1 : n * factorial(n - 1);
+// };
+
+// console.log(factorial(4));
+
+// const factorial = function (n) {
+//   //   if (n == 1) {
+//   //     return 1;
+//   //   }
+//   //   return n * factorial(n - 1);
+//   return n == 1 ? 1 : n * factorial(n - 1);
 // };
 
 // console.log(factorial(4));
@@ -73,6 +137,20 @@
 //     return n * frac(n-1)
 // }
 // console.log(fractional(10))
+
+// //Exercise
+// // Write a recursive function to print out the even number below input number
+// const evenNumber = function (n) {
+//   if (n == 1) {
+//     return;
+//   }
+//   if (n % 2 == 0) {
+//     console.log(n);
+//   }
+//   evenNumber(n - 1);
+// };
+
+// evenNumber(12)
 
 // // Function Scope
 
@@ -133,3 +211,9 @@
 // console.log(sumThree(6));
 // console.log(sumFive(6));
 // console.log(sumEight(6));
+
+// const getObj = (name, age) => ({ name:name, age:age });
+// const getObj = (name, age) => ({ name, age });
+// const getObj = (name, age) => ({ [name]: name, [age]: age });
+
+console.log(getObj("Aung Paing", 25));
