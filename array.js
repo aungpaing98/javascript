@@ -43,15 +43,15 @@ const arr = ["Aung Paing", 24, 178.5, true];
 // console.log(arr.includes(178));
 
 // // Push Pop
-// const someThing = arr.push("jogging");
-// const anotherThing = arr.push("basketball");
+// arr.push("Jogging", "something");
+// arr.pop()
 // const hobby = arr.pop();
 // console.log(arr);
 // console.log(hobby);
 // console.log(someThing);
 // console.log(anotherThing);
 
-// // Shift
+// Shift
 // const removeItem = arr.shift()
 // console.log(arr)
 
@@ -88,6 +88,9 @@ const arr = ["Aung Paing", 24, 178.5, true];
 // replaceEle(originArr, ["BB", "CC"], ["DD"]);
 // console.log(originArr)
 
+// // concat array
+// const anotherArr = ["JJ", 23, 183, true];
+// const concatArr = arr.concat(anotherArr);
 
 // // Iterate an array
 // for (let item of arr) {
@@ -97,10 +100,6 @@ const arr = ["Aung Paing", 24, 178.5, true];
 // arr.forEach((item, idx, arr) => {
 //   console.log(item);
 // });
-
-// // concat array
-// const anotherArr = ["JJ", 23, 183, true];
-// const concatArr = arr.concat(anotherArr);
 
 // console.log(arr);
 // console.log(anotherArr);
@@ -123,7 +122,7 @@ const arr = ["Aung Paing", 24, 178.5, true];
 // console.log(arrCopy);
 
 // // Demostration of shadow copy
-const shoppingArr = ["Apple", { ingrediants: ["Salt", "Pepper"] }];
+// const shoppingArr = ["Apple", { ingrediants: ["Salt", "Pepper"] }];
 // const copyArr = [...shoppingArr];
 // // const copyArr = [shoppingArr[0], shoppingArr[1]]
 
@@ -215,48 +214,73 @@ const ageArr = [10, 20, 30, 12, 40];
 // What is the algorithm used for above method? Greedy Search
 // Write above program again without using return
 
+// Dicussion
+// Can we make a copy with filter?
+// Is the copy deep copy or shadow copy?
+
 // Map
+// const numbers = [1, 2, 3, 4];
+// let double = numbers.map((num, idx, arr) => {
+//   return num ** 2;
+// });
 
-const numbers = [1, 2, 3, 4];
-let double = numbers.map((num, idx, arr) => {
-  return num ** 2;
-});
+// Combine filter and map
+// let doubleEven = numbers
+//   .filter((num, idx, arr) => {
+//     return num % 2 == 0;
+//   })
+//   .map((num, idx, arr) => {
+//     return num ** 2;
+//   });
 
-let doubleEven = numbers
-  .filter((num, idx, arr) => {
-    return num % 2 == 0;
-  })
-  .map((num, idx, arr) => {
-    return num ** 2;
-  });
+// console.log(doubleEven);
+// console.log(numbers);
+// console.log(double);
 
-console.log(doubleEven);
-console.log(numbers);
-console.log(double);
-
-const kvArray = [
-  { key: 1, value: 10 },
-  { key: 2, value: 20 },
-  { key: 3, value: 30 },
-];
+// const kvArray = [
+//   { key: 1, value: 10 },
+//   { key: 2, value: 20 },
+//   { key: 3, value: 30 },
+// ];
 
 // [key] is used to create object
 // Object destructure
 // const reformattedArray = kvArray.map(({ key, value }) => ({ [key]: value }));
 
 // Exercise
-const initialArr = Array(100).fill(0);
-let modifiedArr = initialArr.map((item, idx, arr) => idx);
-initialArr.forEach((item, idx, arr) => {
-  initialArr[idx] = idx;
+// const initialArr = Array(100).fill(0);
+// let modifiedArr = initialArr.map((item, idx, arr) => idx);
+// initialArr.forEach((item, idx, arr) => {
+//   initialArr[idx] = idx;
+// });
+
+// let filterArr = initialArr.filter((item, idx, arr) => {
+//   return item % 2 == 0 && item % 8 != 0;
+// });
+
+// let ret = filterArr.map((item, idx, arr) => {
+//   return item ** 2;
+// });
+
+// console.log(ret);
+
+// // Custom Implementation of the map function
+// console.log(newArr);
+// newArr.__proto__.customForEach = (func) => {
+//   for (let i = 0; i < newArr.length; i++) {
+//     newArr[i] = func(newArr[i], i, newArr);
+//   }
+// };
+
+// newArr.customForEach((item, idx, arr) => {
+//   return item + 1;
+// });
+// console.log(newArr);
+
+// const numArr = [1, 2, 3, 4, 5, 6, 7, 8];
+let ret = numArr.reduce((pre, cur, idx, arr) => {
+  return pre + cur;
 });
 
-let filterArr = initialArr.filter((item, idx, arr) => {
-  return item % 2 == 0 && item % 8 != 0;
-});
-
-let ret = filterArr.map((item, idx, arr) => {
-  return item ** 2;
-});
-
+console.log(numArr);
 console.log(ret);

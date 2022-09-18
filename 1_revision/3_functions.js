@@ -216,4 +216,4 @@
 // const getObj = (name, age) => ({ name, age });
 // const getObj = (name, age) => ({ [name]: name, [age]: age });
 
-console.log(getObj("Aung Paing", 25));
+// console.log(getObj("Aung Paing", 25));
