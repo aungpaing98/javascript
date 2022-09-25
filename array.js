@@ -14,7 +14,7 @@
 // console.log(arr);
 
 // // Create with constructor
-const newArr = Array("Aung Paing", 24, 178.5, true);
+// const newArr = Array("Aung Paing", 24, 178.5, true);
 // console.log(newArr);
 // console.log(newArr.length)
 
@@ -27,7 +27,7 @@ const newArr = Array("Aung Paing", 24, 178.5, true);
 // console.log(nameStr);
 
 // // Attribute and Methods of array
-const arr = ["Aung Paing", 24, 178.5, true];
+// const arr = ["Aung Paing", 24, 178.5, true];
 // console.log(arr.length);
 
 // let arrLength = 0;
@@ -247,6 +247,8 @@ const ageArr = [10, 20, 30, 12, 40];
 // Object destructure
 // const reformattedArray = kvArray.map(({ key, value }) => ({ [key]: value }));
 
+// console.log(reformattedArray);
+
 // Exercise
 // const initialArr = Array(100).fill(0);
 // let modifiedArr = initialArr.map((item, idx, arr) => idx);
@@ -278,9 +280,23 @@ const ageArr = [10, 20, 30, 12, 40];
 // console.log(newArr);
 
 // const numArr = [1, 2, 3, 4, 5, 6, 7, 8];
-let ret = numArr.reduce((pre, cur, idx, arr) => {
-  return pre + cur;
-});
+// let ret = numArr.reduce((pre, cur, idx, arr) => {
+//   console.log(pre, cur);
+//   return pre + cur;
+// });
 
-console.log(numArr);
-console.log(ret);
+// console.log(numArr);
+// console.log(ret);
+
+// // Destructure
+// let someArr = [1, 2, 3, 4];
+
+// let anotherArr = someArr;
+// let [a, b, c, d] = someArr;
+// let [x, y] = someArr;
+// let [i, ...args] = someArr;
+
+// console.log(anotherArr);
+// console.log(a, b, c, d);
+// console.log(x, y);
+// console.log(i, args);
